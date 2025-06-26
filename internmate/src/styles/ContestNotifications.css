@@ -1,0 +1,110 @@
+/* Contest Notifications - LIGHT MODE */
+[data-page="contest"][data-theme="light"] {
+  --bg-color: #f8f5ff;
+  --text-color: #2e1a47;
+  --accent-color: #a678f0;
+  --button-hover: #915ee5;
+  --card-bg-1: #f0e6ff;
+  --card-bg-2: #e6d9fb;
+}
+
+/* Contest Notifications - DARK MODE */
+[data-page="contest"][data-theme="dark"] {
+  --bg-color: #1a132b;
+  --text-color: #f4eaff;
+  --accent-color: #b88aff;
+  --button-hover: #a167ff;
+  --card-bg-1: #2b2041;
+  --card-bg-2: #362654;
+}
+
+.contest-page {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  background-color: var(--bg-color);
+}
+
+.contest-heading {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.contest-banner-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contest-card {
+  padding: 1.2rem 1.5rem;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+  background-color: var(--card-bg-1);
+}
+
+.contest-banner-list .contest-card:nth-child(even) {
+  background-color: var(--card-bg-2);
+}
+
+.contest-card:hover {
+  transform: translateY(-2px);
+}
+
+.contest-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.contest-info p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.contest-actions {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.contest-btn {
+  padding: 0.6rem 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.contest-btn:hover {
+  background-color: var(--button-hover);
+}
+
+.reminder-dropdown {
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent-color);
+  background-color: var(--card-bg-1);
+  color: var(--text-color);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, border 0.2s ease;
+}
+
+[data-theme="dark"] .reminder-dropdown {
+  border-color: var(--button-hover);
+  background-color: var(--card-bg-2);
+}

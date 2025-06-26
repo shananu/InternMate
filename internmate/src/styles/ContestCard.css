@@ -1,0 +1,123 @@
+/* Color Theme for Contest Page - Violet & Lavender */
+body[data-page="contest"][data-theme="light"] {
+  --card-bg-1: #ede7f6;      /* Lavender */
+  --card-bg-2: #e1bee7;      /* Lighter Purple */
+  --text-color: #4a148c;     /* Deep violet text */
+  --button-bg: #7e57c2;      /* Violet */
+  --button-hover: #673ab7;
+  --dropdown-bg: #ffffff;
+  --dropdown-text: #333333;
+}
+
+body[data-page="contest"][data-theme="dark"] {
+  --card-bg-1: #3e1d54;      /* Deep purple */
+  --card-bg-2: #512d6d;      /* Plum */
+  --text-color: #f3e5f5;
+  --button-bg: #9575cd;
+  --button-hover: #b39ddb;
+  --dropdown-bg: #5e35b1;
+  --dropdown-text: #ffffff;
+}
+
+/* Base styles */
+.contest-page {
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.contest-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contest-banner-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Individual Contest Card */
+.contest-card {
+  background-color: var(--card-bg-1);
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.contest-info h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.contest-platform,
+.contest-time {
+  font-size: 0.95rem;
+  margin: 2px 0;
+  color: var(--text-color);
+}
+
+/* Action buttons and dropdown */
+.contest-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Reminder dropdown */
+.reminder-dropdown {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--dropdown-bg);
+  color: var(--dropdown-text);
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.reminder-dropdown:hover {
+  opacity: 0.9;
+}
+
+/* Register button */
+.contest-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--button-bg);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.contest-btn:hover {
+  background-color: var(--button-hover);
+}
+
+.contest-platform {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 0.3rem;
+}
+
+#platform-filter {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+}

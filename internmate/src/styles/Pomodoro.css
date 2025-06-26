@@ -1,0 +1,110 @@
+/* :root {
+  --bg-color: #e9fbe9;
+  --text-color: #00332e;
+  --accent-color: #b2dfdb;
+  --button-hover: #80cbc4;
+} */
+
+body[data-page="pomodoro"][data-theme="dark"] {
+  --bg-color: #0b1f1a;         /* deep forest green */
+  --text-color: #d4f5ec;       /* soft mint text */
+  --accent-color: #2c6652;     /* emerald green */
+  --button-hover: #3d8f73;     /* lighter green on hover */
+}
+
+/* Pomodoro specific colors (green) */
+[data-page="pomodoro"][data-theme="light"] {
+  --bg-color: #f1f8e9;
+  --text-color: #00332e;
+  --accent-color: #b2dfdb;
+  --button-hover: #80cbc4;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.pomodoro-fullscreen {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4rem;
+}
+
+.pomodoro-heading {
+  font-size: 2.2rem;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.pomodoro-heading span {
+  font-weight: 400;
+  display: block;
+  font-size: 1.3rem;
+  margin-top: 0.2rem;
+  opacity: 0.8;
+}
+
+.timer-ring {
+  margin: 2rem 0 1rem;
+}
+
+.session {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.bottom-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+select {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  width: 200px;
+  text-align: center;
+}
+
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-group button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-group button:hover {
+  background-color: var(--button-hover);
+}
+
+.btn-group + .btn-group {
+  margin-top: 0.8rem;
+}

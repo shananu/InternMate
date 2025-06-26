@@ -1,0 +1,24 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff3e0;
+  border-bottom: 2px dashed #ffccbc;
+}
+
+.nav-btn,
+.logout-btn {
+  background-color: #ffe0b2;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.nav-btn:hover,
+.logout-btn:hover {
+  background-color: #ffcc80;
+}

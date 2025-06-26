@@ -1,0 +1,62 @@
+/* Base theme variables - applied globally as fallback */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1c1c1c;
+  --accent-color: #4f83cc;
+  --button-hover: #3b6ebf;
+  --card-bg: #f9f9f9;
+}
+
+/* Pomodoro Theme */
+[data-page="pomodoro"][data-theme="light"] {
+  --bg-color: #f1f8e9;
+  --text-color: #00332e;
+  --accent-color: #b2dfdb;
+  --button-hover: #80cbc4;
+  --card-bg: #ffffff;
+}
+
+[data-page="pomodoro"][data-theme="dark"] {
+  --bg-color: #0a0f2f;
+  --text-color: #e0eafc;
+  --accent-color: #355c9d;
+  --button-hover: #507bbf;
+  --card-bg: #1b223d;
+}
+
+/* Planner Theme */
+[data-page="planner"][data-theme="light"] {
+  --bg-color: #fff7f0;
+  --text-color: #3b2c20;
+  --accent-color: #ffb347;
+  --button-hover: #f57c00;
+  --card-bg: #fff0e0;
+}
+
+[data-page="planner"][data-theme="dark"] {
+  --bg-color: #2c1a0f;
+  --text-color: #f9f2ec;
+  --accent-color: #ff9800;
+  --button-hover: #ffa726;
+  --card-bg: #3e2723;
+}
+
+/* Contest Notifications Theme */
+[data-page="contest"][data-theme="light"] {
+  --bg-color: #f8f5ff;
+  --text-color: #2e1a47;
+  --accent-color: #a678f0;
+  --button-hover: #915ee5;
+  --card-bg-1: #f0e6ff;
+  --card-bg-2: #e6d9fb;
+}
+
+/* Contest Notifications - DARK MODE */
+[data-page="contest"][data-theme="dark"] {
+  --bg-color: #1a132b;
+  --text-color: #f4eaff;
+  --accent-color: #b88aff;
+  --button-hover: #a167ff;
+  --card-bg-1: #2b2041;
+  --card-bg-2: #362654;
+}
