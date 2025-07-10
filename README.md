@@ -36,7 +36,7 @@
 
 ---
 
-## 📍 Overview
+<!-- ## 📍 Overview
 
 <code>❯ REPLACE-ME</code>
 
@@ -44,7 +44,37 @@
 
 ## 👾 Features
 
-<code>❯ REPLACE-ME</code>
+<code>❯ REPLACE-ME</code> -->
+
+
+## 📍 Overview
+
+InternMate is a modern, AI-powered internship management platform designed to simplify and enhance your internship journey. With a sleek web interface and robust backend, it helps users seamlessly track applications, generate professional documents, and get personalized roadmaps for skill-building. Whether you’re a student, fresher, or professional seeking internships, InternMate keeps everything organized and efficient.
+
+Built with **React**, **Node.js**, and **MongoDB**, InternMate leverages modern web technologies for a responsive and scalable user experience.
+
+---
+
+## 👾 Features
+
+- 📋 **Application Tracker**  
+  Manage and organize all your internship applications in one place, with filters for company, role, and application status.
+
+- 📝 **Resume & Cover Letter Generator**  
+  Quickly generate professional resumes and tailored cover letters to strengthen your applications.
+
+- 📊 **Analytics Dashboard**  
+  Visualize your progress with charts showing applications sent, interviews scheduled, and offers received.
+
+- 📅 **Task Management & Reminders**  
+  Set reminders for important deadlines like submissions, interviews, and follow-ups.
+
+- 🧭 **Skill Roadmaps**  
+  Get AI-curated learning paths to upskill in areas like web development, data science, and more.
+
+- ☁️ **Cloud-Based**  
+  Access your data anywhere with secure backend storage.
+
 
 ---
 
