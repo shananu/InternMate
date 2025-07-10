@@ -1,0 +1,306 @@
+/* 🌐 GLOBAL RESET */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  transition: background 0.3s, color 0.3s;
+  overflow: hidden;
+}
+
+/* Set default theme colors (can be overridden by page-specific classes) */
+:root {
+  --accent-color: #fde68a;
+  --text-color: #78350f;
+}
+
+/* 🔲 LAYOUT STRUCTURE */
+.layout-container {
+  display: flex;
+  height: 100vh;
+  background-color: #fdf7f8;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* 📌 SIDEBAR - Always Yellow (Dashboard Theme) */
+.sidebar {
+  background: #fef3c7 !important;
+  color: #78350f !important;
+  width: 240px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #c2185b;
+  margin-bottom: 2rem;
+}
+
+.sidebar button {
+  background: #fff8dc !important;
+  color: #78350f !important;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.sidebar button:hover {
+  background: #fde68a !important;
+  transform: translateX(4px);
+}
+
+.sidebar .theme-toggle {
+  margin-top: auto;
+  background: #fde68a !important;
+  color: #78350f !important;
+}
+
+.sidebar-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.sidebar-closed .sidebar {
+  width: 60px;
+  padding: 1rem 0.5rem;
+}
+
+.sidebar-closed .sidebar button:not(.sidebar-toggle),
+.sidebar-closed .logo {
+  display: none;
+}
+
+/* 🔝 TOPBAR - Changes with Page Theme */
+.topbar {
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-top-left-radius: 20px;
+  transition: background 0.3s, color 0.3s;
+  max-width: 100%; /* or 90% */
+  position: relative;
+}
+
+/* Buttons Row at Bottom */
+.sidebar-footer-row {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.theme-toggle,
+.logout-btn {
+  background: #ffe0e0;
+  color: #990000;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle:hover,
+.logout-btn:hover {
+  background: #ffd4d4;
+}
+
+/* Optional: stack vertically on collapse */
+.sidebar.collapsed .sidebar-footer-row {
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 📄 MAIN CONTENT AREA */
+.content {
+  flex: 1;
+  padding: 2rem;
+  background: #fff;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-bottom-left-radius: 20px;
+
+  /* Hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+/* 🌙 DARK MODE */
+body.dark {
+  background: #0f172a;
+  color: #f8fafc;
+}
+body.dark .content {
+  background: #0f172a;
+}
+
+/* 🌈 THEMES (Only affect topbar using variables) */
+
+/* 🎨 PROFILE - Pink Theme */
+body.dark.dark-profile {
+  --accent-color: #5c1d41;
+  --text-color: #ffd9ec;
+  background: #2b0d1f;
+  color: #ffd9ec;
+}
+
+/* 🎨 POMODORO - Green Theme */
+body.dark.dark-pomodoro {
+  --accent-color: #19573a;
+  --text-color: #d4fdd4;
+  background: #0f2d20;
+  color: #d4fdd4;
+}
+
+/* 🎨 PLANNER - Orange Theme */
+body.dark.dark-planner {
+  --accent-color: #7a3e02;
+  --text-color: #ffe3c2;
+  background: #3b2100;
+  color: #ffe3c2;
+}
+
+/* 🎨 CONTEST - Violet Theme */
+body.dark.dark-contest {
+  --accent-color: #4b2f78;
+  --text-color: #e0d4ff;
+  background: #2e1a47;
+  color: #e0d4ff;
+}
+
+/* 🟡 DASHBOARD - Light Yellow Theme (default) */
+body.dashboard-theme {
+  --accent-color: #fde68a;
+  --text-color: #78350f;
+  background: #fff8e7;
+  color: #4b3410;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.logout-btn {
+  background: #ffe0e0;
+  color: #990000;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #ffcccc;
+}
+
+/* Sidebar Collapse Support */
+.sidebar.collapsed {
+  width: 60px;
+  padding: 1rem 0.5rem;
+  align-items: center;
+}
+
+.sidebar.collapsed .logo,
+.sidebar.collapsed button:not(.sidebar-toggle) {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-indent: -9999px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0.5rem;
+}
+
+.sidebar.collapsed button::before {
+  text-indent: 0;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+/* Topbar full-width override */
+.topbar {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Dashboard Header (blue theme for example) */
+body[data-page="dashboard"] .top-controls {
+  background-color: #e0f2ff;
+  color: #003c5f;
+}
+
+/* Profile Header (pink theme) */
+body[data-page="profile"] .top-controls {
+  background-color: #ffe3ec;
+  color: #5c1b2e;
+}
+
+body[data-page="dashboard"][data-theme="dark"] .top-controls {
+  background-color: #102a43;
+  color: #d0e8ff;
+}
+
+body[data-page="profile"][data-theme="dark"] .top-controls {
+  background-color: #3a1d2f;
+  color: #ffdce5;
+}
+
+/* 👇 Scroll hide animation */
+.topbar.hide-header {
+  transform: translateY(-100%);
+}
+
+.topbar {
+  transition: transform 0.3s ease;
+}

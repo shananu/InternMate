@@ -173,3 +173,55 @@ body.dark .dashboard-nav button:hover {
   border-radius: 8px;
   cursor: pointer;
 }
+
+/* Container should take full viewport height */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Layout the sidebar and main area side by side */
+.dashboard-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Widgets area: left column + right sidebar */
+.dashboard-widgets {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  padding: 40px;
+  gap: 32px;
+}
+
+/* Left column with streak, quote, contest */
+.widget-column {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Right column with profile progress */
+.widget-sidebar {
+  flex: 1;
+  min-width: 280px;
+  max-width: 300px;
+  overflow-y: auto;
+}
+
+/* Hide scrollbar (optional, aesthetic only) */
+.widget-column::-webkit-scrollbar,
+.widget-sidebar::-webkit-scrollbar {
+  display: none;
+}
+.widget-column,
+.widget-sidebar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -53,6 +53,9 @@ router.get("/contests", async (req, res) => {
 
     const response = await axios.get(url);
 
+    console.log("🔍 Sample contest object:", response.data.objects[0]);
+
+
     const uniqueMap = new Map();
 
     response.data.objects.forEach((c) => {
@@ -60,7 +63,7 @@ router.get("/contests", async (req, res) => {
       if (!uniqueMap.has(key)) {
         uniqueMap.set(key, {
           id: c.id,
-          platform: c.resource.name,
+          platform: c.resource.split(".")[0] || "Unknown",
           name: c.event,
           start: c.start,
           duration: c.duration,

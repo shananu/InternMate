@@ -2,28 +2,14 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../styles/Dashboard.css";
-import TopBar from "./TopBar";
 import ProfileProgressRing from "./ProfileProgressRing";
 import axios from "axios";
+import Layout from "../components/Layout";
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Theme Toggle
-  const [theme, setTheme] = useState(
-    localStorage.getItem('theme') || 'light'
-  );
-  useEffect(() => {
-    document.documentElement.className = theme;
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
-  };
-
-  // Profile Completion
   const isNewUser = new URLSearchParams(location.search).get("new") === "true";
   const [userCompletion, setUserCompletion] = useState(0);
   const [showPrompt, setShowPrompt] = useState(isNewUser);
@@ -56,25 +42,10 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="dashboard-container">
-      <TopBar />
-      <div className="dashboard-content">
-        <aside className="dashboard-sidebar">
-          <div className="dashboard-sidebar-header">
-            <h2>⚙ Features</h2>
-            <button onClick={toggleTheme} className="theme-toggle">
-              {theme === 'dark' ? '🌞' : '🌙'}
-            </button>
-          </div>
-          <nav className="dashboard-nav">
-            <button onClick={() => navigate('/profile')}>👤 Profile</button>
-            <button onClick={() => navigate('/pomodoro')}>⏱ Pomodoro</button>
-            <button onClick={() => navigate('/planner')}>🗓 Planner</button>
-            <button onClick={() => navigate('/contest')}>🧭 Contests</button>
-          </nav>
-        </aside>
-
-        <main className="dashboard-widgets">
+    <Layout title="Dashboard">
+      <div className="dashboard-widgets">
+        {/* Left Column */}
+        <div className="widget-column">
           <div className="widget">
             <h3>🔥 Daily Streak</h3>
             <p>You’re on a 3-day streak! Keep going!</p>
@@ -89,13 +60,16 @@ const Dashboard = () => {
             <h3>⏳ Upcoming Contest</h3>
             <p>LeetCode Weekly - June 29, 7:30 PM</p>
           </div>
+        </div>
 
+        {/* Right Column (Sidebar) */}
+        <div className="widget-sidebar">
           <div className="widget widget-center">
             <h3>👤 Profile Completion</h3>
             <ProfileProgressRing percentage={userCompletion} />
             <p>{userCompletion}% complete</p>
           </div>
-        </main>
+        </div>
       </div>
 
       {showPrompt && userCompletion < 100 && (
@@ -110,7 +84,7 @@ const Dashboard = () => {
           </div>
         </div>
       )}
-    </div>
+    </Layout>
   );
 };
 

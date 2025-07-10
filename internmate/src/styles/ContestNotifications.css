@@ -108,3 +108,8 @@
   border-color: var(--button-hover);
   background-color: var(--card-bg-2);
 }
+
+select {
+  appearance: auto;
+  z-index: 1000;
+}

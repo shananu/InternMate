@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import TaskList from "./TaskList";
 import MonthView from "./MonthView";
 import "../styles/Planner.css";
-import TopBar from "./TopBar";
+import Layout from "../components/Layout";
+import "../styles/Layout.css";
 
 import {
   fetchTasksByDate,
@@ -66,8 +67,8 @@ const Planner = () => {
   };
 
   return (
+    <Layout title="Planner">
     <div className="planner-wrapper">
-      <TopBar colr="orange"/>
       <h1 className="planner-heading">✨ Plan Your Day</h1>
       <div className="planner-grid">
         <TaskList
@@ -84,6 +85,7 @@ const Planner = () => {
         />
       </div>
     </div>
+    </Layout>
   );
 };
 

@@ -64,30 +64,18 @@ function MainLayout() {
 }
 
 function HeaderControls({ theme, setTheme }) {
-  const location = useLocation();
-  const current = location.pathname;
-
   return (
     <div className="top-controls">
-      <button onClick={() => setTheme(theme === "light" ? "dark" : "light")} className="theme-toggle">
+      {/* Keep the theme toggle (optional) */}
+      {/* <button onClick={() => setTheme(theme === "light" ? "dark" : "light")} className="theme-toggle">
         {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
-      </button>
+      </button> */}
 
-      <div className="page-switch-buttons">
-        <Link to="/pomodoro" >
-          <button className={current === "/pomodoro" ? "active" : ""}>⏱️ Pomodoro</button>
-        </Link>
-        <Link to="/planner" >
-          <button className={current === "/planner" ? "active" : ""}>🗓️ Planner
-          </button>
-        </Link>
-        <Link to="/contest">
-          <button className={current === "/contest" ? "active" : ""}>🧭 Contests
-          </button>
-        </Link>
-      </div>
+      {/* ❌ Remove this page switch section */}
+      {/* <div className="page-switch-buttons">...</div> */}
     </div>
   );
 }
+
 
 export default App;
